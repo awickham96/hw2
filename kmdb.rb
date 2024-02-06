@@ -41,7 +41,7 @@ new_studio = Studio.new
 new_studio["name"] = "Warner Bros."
 new_studio.save
 
-puts "There are #{Studio.all.count} studios"
+# puts "There are #{Studio.all.count} studios"
 
 # for Movies table:
 
@@ -68,7 +68,7 @@ new_movie["rating"] = "PG-13"
 new_movie["studio_id"] = WarnerBros["id"]
 new_movie.save
 
-puts "There are #{Movie.all.count} movies"
+# puts "There are #{Movie.all.count} movies"
 
 # for Actor table:
 
@@ -116,7 +116,7 @@ new_actor = Actor.new
 new_actor["name"] = "Anne Hathaway"
 new_actor.save
 
-puts "There are #{Actor.all.count} actors"
+# puts "There are #{Actor.all.count} actors"
 
 # for Role table
 
@@ -240,7 +240,7 @@ role["movie_id"] = darkKnightRises["id"]
 role["actor_id"] = aHathaway["id"]
 role.save
 
-puts "There are #{Role.all.count} roles"
+# puts "There are #{Role.all.count} roles"
 
 # Prints a header for the movies output
 puts "Movies"
@@ -269,6 +269,3 @@ for role in Role.all
     character_name = role.character_name
     puts "#{movie_title} #{actor_name} #{character_name}"
   end
-  
-  
-
