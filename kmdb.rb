@@ -242,27 +242,29 @@ role.save
 
 puts "There are #{Role.all.count} roles"
 
-# # Prints a header for the movies output
+# Prints a header for the movies output
 puts "Movies"
 puts "======"
 puts ""
 
-# # Query the movies data and loop through the results to display the movies output.
+# Query the movies data and loop through the results to display the movies output.
 
-# Display Movies
-Movie.all.each do |movie|
-  studio_name = Studio.find(movie.studio_id).name
-  puts "#{movie.title} #{movie.year_released} #{movie.rating} #{studio_name}"
-end
+for movie in Movie.all
+    studio_name = Studio.find(movie.studio_id).name
+    puts "#{movie.title} #{movie.year_released} #{movie.rating} #{studio_name}"
+  end
+  
 
-# # Prints a header for the cast output
+# Prints a header for the cast output
 puts ""
 puts "Top Cast"
 puts "========"
 puts ""
 
-# Display Roles
-Role.all.each do |role|
+# Query the movies data and loop through the results to display the Top Cast output.
+
+
+for role in Role.all
     movie_title = Movie.find(role.movie_id).title
     actor_name = Actor.find(role.actor_id).name
     character_name = role.character_name
