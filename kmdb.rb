@@ -263,7 +263,6 @@ puts ""
 
 # Query the movies data and loop through the results to display the Top Cast output.
 
-
 for role in Role.all
     movie_title = Movie.find(role.movie_id).title
     actor_name = Actor.find(role.actor_id).name
